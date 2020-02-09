@@ -9,7 +9,7 @@ const twoTimes = (num) => num * 2;
 
 const showA = (b) => {
   twoTimes(b);
-  return b;
+  return b
 };
 
 console.log(lol('lol'));
