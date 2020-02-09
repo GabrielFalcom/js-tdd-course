@@ -4,6 +4,8 @@
   "description": "Lib Course JS TDD",
   "main": "index.js",
   "scripts": {
+    "lol": "echo \"LUL\" ",
+    "prepush": "npx eslint src/*.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/GabrielFalcom/js-tdd-course/issues"
   },
-  "homepage": "https://github.com/GabrielFalcom/js-tdd-course#readme"
+  "homepage": "https://github.com/GabrielFalcom/js-tdd-course#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.1"
+  }
 }
