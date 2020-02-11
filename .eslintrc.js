@@ -17,4 +17,14 @@ module.exports = {
   },
   rules: {
   },
+  overrides: [
+    {
+        files: "*.spec.js",
+        rules: {
+            "no-unused-expressions": "off",
+            "no-undef": "off",
+            "no-console": "off",
+        }
+    }
+]
 };

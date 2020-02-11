@@ -4,13 +4,21 @@
   "description": "Lib Course JS TDD",
   "main": "index.js",
   "scripts": {
-    "lol": "echo \"LUL\" ",
-    "prepush": "npx eslint src/*.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch --require babel-register",
+    "test:coverage": "nyc npm test",
+    "prepush": "git push origin master"
+  },
+  "nyc": {
+    "functions": 91,
+    "lines": 91,
+    "check-coverage": true,
+    "reporter": ["text", "html"],
+    "exlucde": ["tests/**"]
   },
   "husky": {
     "hooks": {
-      "prepush": "npx eslint src/*.js"
+      "pre-push": "npx eslint src/*.js && npm run test:coverage"
     }
   },
   "repository": {
@@ -28,10 +36,15 @@
   },
   "homepage": "https://github.com/GabrielFalcom/js-tdd-course#readme",
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-react": "^7.18.3",
-    "husky": "^4.2.1"
+    "husky": "^4.2.1",
+    "mocha": "^7.0.1",
+    "nyc": "^15.0.0"
   }
 }
